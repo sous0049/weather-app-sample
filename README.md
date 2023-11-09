@@ -13,11 +13,16 @@ This is a simple web application that utilizes the WeatherAPI to fetch and displ
 - **Search:** Enter a location and click the "Search" button to fetch the current weather data.
 - **Dynamic Card:** The application dynamically generates a card displaying information such as temperature, humidity, and wind speed.
 
-- iPhone Size Screen
-  ![iPhone Size](./images/image-1.png)
-
-- iPad Air Size Screen
-  ![iPad Air Size](./images/image-2.png)
+<div style="display: flex; justify-content: space-between; gap: 2rem;">
+    <div style="flex: 1">
+        <h3>iPhone SE Screen</h3>
+        <img src="./images/image-1.png" alt="iPhone Size" width="200">
+    </div>
+    <div style="flex: 1">
+        <h3>iPad Air Screen</h3>
+        <img src="./images/image-2.png" alt="iPad Air Size" width="200">
+    </div>
+</div>
 
 ### Prerequisites:
 
@@ -83,22 +88,23 @@ Implement error handling for cases where the API request fails. This can include
    git clone https://github.com/sous0049/weather-app-sample
    ```
 2. Open the index.html file in your web browser.
-3. Enter a location in the input field and click the "Search" button.
+3. Enter a location in the input field.
+4. Click the "Search" button.
 
 ## Creating your own
 
 1. Create the HTML file following the best practices.
 2. Link your CSS styling and JavaScript script to your HTML.
-3. Create as Mobile First
-   - Make sure your Search Box fits the screen
-   - The user can easily select and type
-   - Search button is big enough to click
-   - The layout changes for bigger screens (Tablet and Desktop)
-4. Apply best practices in your javascript
-5. Name your variables and functions in a meaningful way
-6. Make sure your javascript only runs when the page finished loading
-7. Challenge yourself and make your code reusable
-   - Meaning small functions to complete tasks
+3. Create as Mobile First:
+   - Make sure your Search Box fits the screen.
+   - The user can easily select and type.
+   - Search button is big enough to click.
+   - The layout changes for bigger screens (Tablet and Desktop).
+4. Apply best practices in your javascript.
+5. Name your variables and functions in a meaningful way.
+6. Make sure your javascript only runs when the page finished loading.
+7. Challenge yourself and make your code reusable:
+   - Meaning small functions to complete tasks.
    - eg. fetchData, buildCard, errorHandler ...
 
 ## License
