@@ -87,9 +87,11 @@ Implement error handling for cases where the API request fails. This can include
    ```bash
    git clone https://github.com/sous0049/weather-app-sample
    ```
-2. Open the index.html file in your web browser.
-3. Enter a location in the input field.
-4. Click the "Search" button.
+2. Open the Javascript file.
+3. Add your API key.
+4. Open the index.html file in your web browser.
+5. Enter a location in the input field.
+6. Click the "Search" button.
 
 ## Creating your own
 
