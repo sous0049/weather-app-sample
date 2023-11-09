@@ -57,3 +57,66 @@ const APP = {
 };
 
 document.addEventListener("DOMContentLoaded", APP.init);
+
+/* 
+
+//Code without namespace
+
+const location = document.getElementById("locationInput");
+const searchButton = document.getElementById("searchButton");
+const weatherContainer = document.getElementById("weather");
+const url = `https://api.weatherapi.com/v1/current.json?`;
+// Replace 'YOUR_API_KEY' with your WeatherAPI key
+const apiKey = "YOUR_API_KEY";
+
+function init() {
+  searchButton.addEventListener("click", fetchData);
+}
+
+function fetchData() {
+  const apiUrl = `${url}key=${apiKey}&q=${location.value.trim()}`;
+  if (location.value.trim() === "") {
+      errorHandler("Please enter a valid location");
+      return;
+    }
+  fetch(apiUrl)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      buildCard(data);
+    })
+    .catch((error) => {
+      errorHandler(error);
+    });
+}
+
+function buildCard(data) {
+  weatherContainer.innerHTML = `
+      <h2>Current Weather for: ${data.location.name}</h2>
+      <div class="weatherApp__card card">
+        <div class="card__condition container--text">
+          <img src="${data.current.condition.icon}" alt="${data.current.condition.text}" />
+          <p>Currently weather <span>is ${data.current.condition.text}</span></p>
+        </div>
+        <div class="card__details">
+          <div class="card__details--container">
+            <p>Humidity: ${data.current.humidity}%</p>
+            <p>Wind: ${data.current.wind_kph} km/h</p>
+          </div>
+          <p>Temperature: ${data.current.temp_c}ºC or ${data.current.temp_f}ºF</p>
+          <p>Feels like: ${data.current.feelslike_c}ºC or ${data.current.feelslike_f}ºF</p>
+        </div>
+      </div>`;
+}
+
+const errorHandler = (err) => {
+  weatherContainer.innerHTML = `<h3>${err}</h3>`;
+};
+
+document.addEventListener("DOMContentLoaded", init);
+
+*/
