@@ -24,7 +24,7 @@ const APP = {
         APP.buildCard(data);
       })
       .catch((error) => {
-        console.error(error);
+        APP.errorHandler(error);
       });
   },
 
@@ -45,6 +45,10 @@ const APP = {
             <p>Feels like: ${data.current.feelslike_c}ºC or ${data.current.feelslike_f}ºF</p>
           </div>
         </div>`;
+  },
+
+  errorHandler: (err) => {
+    APP.weatherContainer.innerHTML = `<h4>${err}</h4>`;
   },
 };
 
