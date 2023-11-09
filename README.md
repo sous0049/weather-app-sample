@@ -1,86 +1,106 @@
-# Weather api
+# Fetch API Weather App
 
-#### A fetch Follow Along Exercise
+#### A fetch Follow Along Exercise for PA Session
 
-In this exercise, you'll learn how to use the Fetch API to retrieve weather information for a specific location using the ![Alt text](image.png).
+In this exercise, you'll learn how to use the Fetch API to retrieve weather information for a specific location using the ![weather api logo](./images/image.png).
 
 [Weather API website](https://www.weatherapi.com/)
 
-Prerequisites:
+This is a simple web application that utilizes the WeatherAPI to fetch and display current weather information based on user input.
 
-1. a
-2. You need an API key from OpenWeatherMap. You can sign up for a free API key on the OpenWeatherMap website.
-   Exercise Steps
-   Create an HTML file (e.g., index.html) with the following structure:
+## Features
 
-HTML
-Copy code
+- **Search:** Enter a location and click the "Search" button to fetch the current weather data.
+- **Dynamic Card:** The application dynamically generates a card displaying information such as temperature, humidity, and wind speed.
 
-<pre>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Fetch API Weather Exercise</title>
-</head>
-<body>
-    <h1>Fetch API Weather Exercise</h1>
-    <div id="response-container">
-        <!-- Weather data will be displayed here -->
-    </div>
+- iPhone Size Screen
+  ![iPhone Size](./images/image-1.png)
 
-    <script src="script.js"></script>
-</body>
-</html>
-</pre>
+- iPad Air Size Screen
+  ![iPad Air Size](./images/image-2.png)
 
-Create a JavaScript file (e.g., script.js) to write the Fetch API GET request code. Replace 'YOUR_API_KEY' with your OpenWeatherMap API key:
+### Prerequisites:
 
-javascript
-Copy code
+1. Sign Up for an Account:
+   Visit the WeatherAPI provider's website (in your case, WeatherAPI).
+   Look for a "Sign Up" or "Register" option and create an account.
 
-<pre>
-document.addEventListener("DOMContentLoaded", () => {
-    const responseContainer = document.getElementById("response-container");
+2. Get Your API Key:
+   Once you have an account, navigate to the developer or API section.
+   Find the option to create a new API key or access your existing key.
+   Copy the API key provided.
 
-    // Replace 'YOUR_API_KEY' with your WeatherAPI key
-    const apiKey = 'YOUR_API_KEY';
-    const city = 'New York'; // Replace with the city you want to get weather data for
-    const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`;
+3. Understand Usage Limits:
+   Check the usage limits associated with your API key. Free accounts often have limited usage, and exceeding these limits may result in restricted access.
 
-    fetch(apiUrl)
-    .then(response => {
-        if (!response.ok) {
-            throw new Error("Network response was not ok");
-        }
-        return response.json();
-    })
-    .then(data => {
-        // Display the weather data
-        responseContainer.innerHTML = `< pre>${JSON.stringify(data, null, 2)}</ pre>`;
+4. Read Documentation:
+   Familiarize yourself with the WeatherAPI documentation. This will provide details on the available endpoints, request parameters, and the structure of the API responses.
 
-    })
-    .catch(error => {
-        console.error("Fetch API Error:", error);
-        responseContainer.innerHTML = "Failed to fetch weather data.";
-    });
-});
-</pre>
-
-Response code
+5. Include the API Key in Your Requests:
+   In your JavaScript code where you make requests to the WeatherAPI, include your API key in the request URL. For example:
 
 <pre>
-{ "location": { "name": "New York", "region": "New York", "country": "United States of America", "lat": 40.71, "lon": -74.01, "tz_id": "America/New_York", "localtime_epoch": 1699387370, "localtime": "2023-11-07 15:02" }, "current": { "last_updated_epoch": 1699387200, "last_updated": "2023-11-07 15:00", "temp_c": 16.7, "temp_f": 62.1, "is_day": 1, "condition": { "text": "Sunny", "icon": "//cdn.weatherapi.com/weather/64x64/day/113.png", "code": 1000 }, "wind_mph": 2.2, "wind_kph": 3.6, "wind_degree": 260, "wind_dir": "W", "pressure_mb": 1008, "pressure_in": 29.75, "precip_mm": 0, "precip_in": 0, "humidity": 65, "cloud": 0, "feelslike_c": 16.7, "feelslike_f": 62.1, "vis_km": 16, "vis_miles": 9, "uv": 5, "gust_mph": 18, "gust_kph": 28.9 } }
+const apiKey = 'YOUR_API_KEY';
+const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=your_location`;
 </pre>
 
-Open the HTML file (index.html) in your web browser. The response with weather data for New York will be displayed on the web page.
+6. **Handle Errors**:
 
-What's Happening
-We start by creating a basic HTML structure with a placeholder for displaying the weather data.
+Implement error handling for cases where the API request fails. This can include network errors, invalid responses, or exceeded usage limits.
 
-We create a JavaScript file that fetches weather data from the Weather API.
+### Response code
 
-We use the fetch function to send a GET request to the Weather API's weather endpoint, including the city name and the API key.
+<pre>
+{
+  "location":{
+    "name":"London","region":"City of London, Greater London","country":"United Kingdom","lat":51.52,"lon":-0.11,"tz_id":"Europe/London","localtime_epoch":1699551229,"localtime":"2023-11-09 17:33"
+  },
+  "current":{
+    "last_updated_epoch":1699551000,"last_updated":"2023-11-09 17:30","temp_c":8,"temp_f":46.4,"is_day":0,
+    "condition":{
+      "text":"Partly cloudy","icon":"//cdn.weatherapi.com/weather/64x64/night/116.png","code":1003
+      },
+    "wind_mph":12.5,"wind_kph":20.2,"wind_degree":250,"wind_dir":"WSW","pressure_mb":993,"pressure_in":29.32,"precip_mm":0.02,"precip_in":0,"humidity":81,"cloud":75,"feelslike_c":5,"feelslike_f":41.1,"vis_km":10,"vis_miles":6,"uv":1,"gust_mph":17.9,"gust_kph":28.7
+  }
+}
+</pre>
 
-We handle the response by checking for network errors and parsing the JSON response.
+### Dependencies
 
-The weather data is displayed on the web page.
+- Roboto Font: Used for the application's font.
+- WeatherAPI: Provides current weather data.
+
+### Usage
+
+1. Enter a valid location in the input field.
+2. Click the "Search" button.
+3. View the dynamically generated weather card.
+
+## Getting Started
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/sous0049/weather-app-sample
+   ```
+2. Open the index.html file in your web browser.
+3. Enter a location in the input field and click the "Search" button.
+
+## Creating your own
+
+1. Create the HTML file following the best practices.
+2. Link your CSS styling and JavaScript script to your HTML.
+3. Create as Mobile First
+   - Make sure your Search Box fits the screen
+   - The user can easily select and type
+   - Search button is big enough to click
+   - The layout changes for bigger screens (Tablet and Desktop)
+4. Apply best practices in your javascript
+5. Name your variables and functions in a meaningful way
+6. Make sure your javascript only runs when the page finished loading
+7. Challenge yourself and make your code reusable
+   - Meaning small functions to complete tasks
+   - eg. fetchData, buildCard, errorHandler ...
+
+## License
+
+This project is licensed under the [MIT License](./LICENSE).
