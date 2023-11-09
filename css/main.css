@@ -1,0 +1,434 @@
+:root {
+  --color-primary: #36bf7f;
+  --color-primary-light: #75d3a7;
+  --color-primary-dark: #1e7b4d;
+  --color-accent: #d96666;
+  --color-accent-light: #e69898;
+  --color-accent-dark: #a63b3b;
+  --color-secondary: #394a59;
+  --color-secondary-light: #59758d;
+  --color-secondary-dark: #2c3e4f;
+  --color-grey-light-1: #faf9f9;
+  --color-grey-light-2: #f4f2f2;
+  --color-grey-light-3: #f0eeee;
+  --color-grey-light-4: #ccc;
+  --color-grey-dark-1: #333;
+  --color-grey-dark-2: #777;
+  --color-grey-dark-3: #999;
+  --color-grey-dark-4: #000;
+  --color-black: #000;
+  --color-white: #fff;
+}
+
+Box sizing rules *,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+ul,
+ol,
+dl,
+dd {
+  margin: 0 0 1.5rem;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+
+html {
+  line-height: 1.5;
+  font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* A elements that don't have a class get default styles */
+a {
+  text-decoration-skip-ink: auto;
+  color: var(--color-primary);
+}
+
+a:hover,
+a:focus {
+  color: var(--color-accent);
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+svg {
+  fill: currentColor;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* styling for the buttons of the page */
+
+.btn {
+  /* base pattern for the button */
+  display: inline-block;
+  padding: 0.5em 1.5em;
+  background-color: var(--color-secondary);
+  border: 0.125rem solid var(--color-secondary);
+  color: var(--color-white);
+  border-radius: 0.25em;
+  text-align: center;
+
+  /* Link */
+  text-decoration: none;
+
+  /* Button */
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.btn:hover,
+.btn:focus {
+  /* base pattern for the button - mouse or tab action */
+  color: var(--color-white);
+  background-color: var(--color-secondary-light);
+  border-color: var(--color-secondary-light);
+}
+
+.btn--secondary {
+  /* secondary pattern for the button */
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-black);
+}
+
+.btn--secondary:hover,
+.btn--secondary:focus {
+  /* secondary pattern for the button - mouse or tab action */
+  background-color: var(--color-primary-light);
+  border-color: var(--color-primary-light);
+  color: var(--color-black);
+}
+
+.btn--outline {
+  /* outline pattern for the button */
+  color: var(--color-secondary);
+  background-color: transparent;
+}
+
+.btn--outline:hover,
+.btn--outline:focus {
+  /* base pattern for the button - mouse or tab action */
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: var(--color-white);
+}
+
+.btn--small {
+  /* small pattern for the button */
+  font-size: 0.75rem;
+}
+
+.btn--large {
+  /* large pattern for the button */
+  font-size: 1.25rem;
+}
+
+/* *************** styling for the responsive assignment *************** */
+
+html {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
+}
+
+.container {
+  width: min(45em, 100%);
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.container--text {
+  width: min(45em, 90%);
+}
+
+/* screens adjustments */
+
+/* ---------- min-width ---------- */
+
+h1,
+.heading-1 {
+  font-size: 1.802rem;
+  color: var(--color-primary);
+}
+
+h2,
+.heading-2 {
+  font-size: 1.602rem;
+}
+
+h3,
+.heading-3 {
+  font-size: 1.424rem;
+  text-transform: uppercase;
+  color: var(--color-primary-light);
+  margin-bottom: 0;
+}
+
+h4,
+.heading-4 {
+  font-size: 1.266rem;
+  color: var(--color-accent);
+  margin: 0;
+}
+
+h5,
+.heading-5 {
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+h6,
+.heading-6 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+@media only screen and (min-width: 45em) {
+  h1,
+  .heading-1 {
+    font-size: 2.488rem;
+  }
+
+  h2,
+  .heading-2 {
+    font-size: 2.074rem;
+  }
+
+  h3,
+  .heading-3 {
+    font-size: 1.728rem;
+  }
+
+  h4,
+  .heading-4 {
+    font-size: 1.44rem;
+  }
+
+  h5,
+  .heading-5 {
+    font-size: 1.2rem;
+  }
+
+  h6,
+  .heading-6 {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (min-width: 60em) {
+  h1,
+  .heading-1 {
+    font-size: 3.052rem;
+  }
+
+  h2,
+  .heading-2 {
+    font-size: 2.441rem;
+  }
+
+  h3,
+  .heading-3 {
+    font-size: 1.953rem;
+  }
+
+  h4,
+  .heading-4 {
+    font-size: 1.563rem;
+  }
+
+  h5,
+  .heading-5 {
+    font-size: 1.25rem;
+  }
+
+  h6,
+  .heading-6 {
+    font-size: 1rem;
+  }
+}
+
+.material-symbols-outlined {
+  margin: 0;
+  padding: 0;
+}
+
+/* --> Weather App Styles <-- */
+
+.weatherApp {
+  background-color: var(--color-black);
+  min-height: 100vh;
+  display: flex;
+  color: var(--color-white);
+}
+
+/* --> Weather App - Header Styles <-- */
+
+.masthead {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 0;
+}
+
+.masthead h1 {
+  margin: 0;
+}
+
+@media only screen and (min-width: 65em) {
+  .masthead {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .masthead h1 {
+    line-height: normal;
+  }
+  .masthead h1 span {
+    display: inline-block;
+  }
+}
+
+/* --> Weather App - INPUT Styles <-- */
+
+.weatherApp__input {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+[type="text"] {
+  width: 100%;
+}
+
+.weatherApp__input input {
+  padding: 0.35rem 1rem;
+  border: var(--color-grey-dark-2) solid 0.01rem;
+  border-radius: 1rem;
+}
+
+.btn--add {
+  padding: 0.35em 1.5em;
+  border: var(--color-grey-dark-2) solid 0.01rem;
+  border-radius: 2rem;
+}
+
+/* --> Weather App - Card Styles <-- */
+
+.card {
+  display: grid;
+  gap: 0.25rem;
+  background-color: #ffffff22;
+  border-radius: 2rem;
+  padding: 1rem;
+}
+
+.card p {
+  margin: 0;
+}
+
+.card__condition {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  /* aspect-ratio: 1 / 1; */
+}
+
+.card__condition img {
+  display: block;
+  /* width: 100%; */
+  object-fit: cover;
+  /* border-radius: 1rem; */
+}
+
+.card__details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card__details--container {
+  display: flex;
+  gap: 1.5rem;
+}
+
+@media only screen and (min-width: 35em) {
+  .card {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+  .card__condition {
+    padding: 0.5rem;
+    flex-direction: column;
+    gap: 0;
+    text-align: center;
+  }
+  .card__condition p span {
+    display: block;
+  }
+}

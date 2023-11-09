@@ -1,15 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <!-- +k?p2&KDh$5f.Xs -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fetch API Weather Exercise</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <script type="module" src="./js/main.js"></script>
   </head>
-  <body>
-    <h1>Fetch API Weather Exercise</h1>
-    <div id="response-container">
-      <!-- Weather data will be displayed here -->
+  <body class="weatherApp">
+    <div class="container">
+      <header class="masthead">
+        <h1>Fetch Exercise <span>API Weather</span></h1>
+        <div class="weatherApp__input container--text">
+          <input
+            type="text"
+            id="locationInput"
+            placeholder="Search for a Location"
+          />
+          <button class="btn btn--secondary btn--add" id="searchButton">
+            Search
+          </button>
+        </div>
+      </header>
+      <main>
+        <div id="weather" class="container--text">
+          <!-- <h2>Current Weather for:</h2>
+          <div class="weatherApp__card card">
+            <div class="card__condition">
+              <img src="https://via.placeholder.com/150" alt="Weather Icon" />
+              <p>"text": "Sunny"</p>
+            </div>
+            <div class="card__details">
+              <p>"name": "New York"</p>
+              <p>"temp_c": 16.7</p>
+              <p>"feelslike_c": 16.7</p>
+            </div>
+          </div> -->
+        </div>
+      </main>
     </div>
-
-    <script src="./js/main.js"></script>
   </body>
 </html>
