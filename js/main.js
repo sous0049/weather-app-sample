@@ -12,7 +12,10 @@ const APP = {
 
   fetchData: function () {
     const apiUrl = `${APP.url}key=${APP.apiKey}&q=${APP.location.value.trim()}`;
-
+    if (APP.location.value.trim() === "") {
+      APP.errorHandler("Please enter a valid location");
+      return;
+    }
     fetch(apiUrl)
       .then((response) => {
         if (!response.ok) {
