@@ -7,7 +7,25 @@ const APP = {
   apiKey: "YOUR_API_KEY",
 
   init: function () {
-    console.log("APP.init");
+    APP.searchButton.addEventListener("click", APP.fetchData);
+  },
+
+  fetchData: function () {
+    const apiUrl = `${APP.url}key=${APP.apiKey}&q=${APP.location.value.trim()}`;
+
+    fetch(apiUrl)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   },
 };
 
