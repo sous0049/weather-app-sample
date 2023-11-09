@@ -18,6 +18,7 @@ const APP = {
     }
     fetch(apiUrl)
       .then((response) => {
+        APP.location.value = "";
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
