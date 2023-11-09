@@ -21,11 +21,30 @@ const APP = {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
+        APP.buildCard(data);
       })
       .catch((error) => {
         console.error(error);
       });
+  },
+
+  buildCard: function (data) {
+    APP.weatherContainer.innerHTML = `
+        <h2>Current Weather for: ${data.location.name}</h2>
+        <div class="weatherApp__card card">
+          <div class="card__condition container--text">
+            <img src="${data.current.condition.icon}" alt="${data.current.condition.text}" />
+            <p>Currently weather <span>is ${data.current.condition.text}</span></p>
+          </div>
+          <div class="card__details">
+            <div class="card__details--container">
+              <p>Humidity: ${data.current.humidity}%</p>
+              <p>Wind: ${data.current.wind_kph} km/h</p>
+            </div>
+            <p>Temperature: ${data.current.temp_c}ºC or ${data.current.temp_f}ºF</p>
+            <p>Feels like: ${data.current.feelslike_c}ºC or ${data.current.feelslike_f}ºF</p>
+          </div>
+        </div>`;
   },
 };
 
